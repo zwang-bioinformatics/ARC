@@ -1,0 +1,67 @@
+# Pixi
+.pixi/*
+!.pixi/config.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+.venv/
+venv/
+env/
+
+# Linters / tests
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Runs: predictions, eval, manuscript outputs; fetched tarballs live under downloads/
+outputs/
+downloads/
+
+# CASP inputs and graphs (use fetch_assets or manual layout; see README)
+data/
+
+# Local env
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and common ML run folders
+*.log
+wandb/
+mlruns/
+.dmypy.json
+
+# Local-only helper for building release tarballs
+scripts/assets/make_asset_tarballs_local.py

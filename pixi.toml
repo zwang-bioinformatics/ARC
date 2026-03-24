@@ -1,0 +1,37 @@
+[workspace]
+channels = ["conda-forge"]
+name = "ARC"
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+version = "0.1.0"
+
+[dependencies]
+python = ">=3.11,<3.13"
+numpy = ">=2.4.3,<3"
+pytorch-cpu = ">=2.10.0,<3"
+pytorch_geometric = ">=2.7.0,<3"
+safetensors = ">=0.7.0,<0.8"
+tqdm = ">=4.67.3,<5"
+pandas = ">=2.2,<3"
+polars = ">=1.0,<2"
+pyarrow = ">=14,<22"
+scipy = ">=1.11,<2"
+scikit-learn = ">=1.4,<2"
+matplotlib = ">=3.8,<4"
+seaborn = ">=0.13,<1"
+scienceplots = ">=2,<3"
+pymol-open-source = ">=3.0,<4"
+pillow = ">=10,<12"
+
+# Eval + manuscript tasks pin CASP16_EVAL_OUTPUT_ROOT to the repo default (``outputs/results``)
+# under ARC_ROOT) so a user shell export (e.g. outputs/results_e2e_clean) does not redirect runs.
+[tasks]
+predict = { cmd = "python -u predict.py", cwd = "src" }
+run-batch = { cmd = "python -u run_local.py", cwd = "src" }
+smoke = { cmd = "python -c \"import torch; import torch_geometric; import safetensors; print(torch.__version__)\"" }
+eval-full = { cmd = "python -u scripts/eval/casp16_eval.py && python -u scripts/manuscript/plots_manuscript_figures.py", env = { CASP16_EVAL_OUTPUT_ROOT = "outputs/results" } }
+manuscript-figures = { cmd = "python -u scripts/manuscript/plots_manuscript_figures.py", env = { CASP16_EVAL_OUTPUT_ROOT = "outputs/results" } }
+manuscript-tables = { cmd = "python -u scripts/manuscript/plots_manuscript_supplementary_tables.py", env = { CASP16_EVAL_OUTPUT_ROOT = "outputs/results" } }
+replot-pooled-roc = { cmd = "python -u scripts/eval/replot_figure2_roc.py", env = { CASP16_EVAL_OUTPUT_ROOT = "outputs/results" } }
+
+[pypi-dependencies]
+mlstatkit = ">=0.1.91, <0.2"
