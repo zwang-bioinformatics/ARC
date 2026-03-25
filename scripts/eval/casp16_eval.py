@@ -103,7 +103,7 @@ def _assert_apollo_predictions_per_target() -> None:
     ]
     assert not missing, (
         "Eval requires outputs/predictions/CASP16/<target>/APOLLO/ for each target "
-        f"(fetch predictions_apollo.tar.gz or run inference). Missing APOLLO for "
+        f"(fetch predictions_apollo.tar.zst or run inference). Missing APOLLO for "
         f"{len(missing)} target(s): {', '.join(missing[:20])}"
         + (" ..." if len(missing) > 20 else "")
     )

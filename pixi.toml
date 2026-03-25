@@ -21,6 +21,7 @@ seaborn = ">=0.13,<1"
 scienceplots = ">=2,<3"
 pymol-open-source = ">=3.0,<4"
 pillow = ">=10,<12"
+zstandard = ">=0.22,<0.24"
 
 # Eval + manuscript tasks pin CASP16_EVAL_OUTPUT_ROOT to the repo default (``outputs/results``)
 # under ARC_ROOT) so a user shell export (e.g. outputs/results_e2e_clean) does not redirect runs.

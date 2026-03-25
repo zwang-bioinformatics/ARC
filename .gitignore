@@ -41,6 +41,7 @@ downloads/
 
 # CASP inputs and graphs (use fetch_assets or manual layout; see README)
 data/
+data_/
 
 # Local env
 .env
@@ -65,3 +66,4 @@ mlruns/
 
 # Local-only helper for building release tarballs
 scripts/assets/make_asset_tarballs_local.py
+scripts/assets/materialize_data_symlinks.py

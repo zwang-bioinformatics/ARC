@@ -90,10 +90,10 @@ The recommended approach is to fetch the packaged tarballs:
 pixi run python -u scripts/assets/fetch_assets.py
 ```
 
-This extracts each archive at the repository root:
+This extracts each archive (Zstandard `.tar.zst`) at the repository root:
 
 ```text
-arc_eval_inputs_core.tar.gz:
+arc_eval_inputs_core.tar.zst:
 data/
 ├── raw_16/
 ├── casp16_ema_reference_results/
@@ -103,7 +103,7 @@ data/
 ├── ema_local_scores_with_lddt_added_mdl_contacts.csv
 └── target_margin_scores.csv
 
-arc_graph_data_casp16.tar.gz:
+arc_graph_data_casp16.tar.zst:
 data/
 └── CASP16/
     └── <target>/
@@ -111,7 +111,7 @@ data/
             ├── meta.json
             └── data.st
 
-predictions_apollo.tar.gz:
+predictions_apollo.tar.zst:
 outputs/
 └── predictions/
     └── CASP16/
@@ -119,7 +119,7 @@ outputs/
             └── APOLLO/
                 └── LOCAL.json
 
-predictions_arc.tar.gz:
+predictions_arc.tar.zst:
 outputs/
 └── predictions/
     └── CASP16/
