@@ -266,7 +266,7 @@ outputs/
 
 ## Citation
 
-If you use ARC, please cite:
+If you use ARC, please cite: [TBD]
 
 ```bibtex
 @article{shrestha2026arc,
